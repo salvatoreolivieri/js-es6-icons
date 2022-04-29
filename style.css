@@ -27,6 +27,18 @@
   margin-right: 20px;
 }
 
+.header-bottom select{
+  width: 65px;
+  padding: 5px;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: white;
+
+  cursor: pointer;
+}
+
 
 /* 
   MAIN
@@ -35,16 +47,15 @@
 main{
   height: calc(100vh - 140px);
   background-color: #DDDDDD;
-  padding-top: 50px;
+  padding: 50px 50px 0 50px ;
 }
 
 
 .custom-container{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 
   flex-wrap: wrap;
-
 
 }
 
@@ -52,8 +63,12 @@ main{
   width: 200px;
   height: 100px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-right: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 
   border-radius: 10px;
   box-shadow: 0px 5px 3px 0px #2a2a2a;
