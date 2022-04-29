@@ -142,10 +142,13 @@ icon.forEach(element => {
 
   `
   <div class="card">
-    <span><i class="fa-solid ${element.prefix}${element.name}"></i></span><br>
+    <span><i style = "color:${element.color}" class="fa-solid ${element.prefix}${element.name}"></i></span><br>
     <span>${element.name}</span><br>
   </div>  
 `
 
 });
+
+
+// Milestone 2: Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 
