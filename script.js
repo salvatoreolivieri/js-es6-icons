@@ -16,7 +16,7 @@ BONUS:
  */
 
 
-const icon = [
+const icons = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -135,20 +135,110 @@ const icon = [
 // Milestone 1: Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
 
 const contenitore = document.querySelector(".custom-container")
-
-icon.forEach(element => {
-
-  contenitore.innerHTML += 
-
-  `
-  <div class="card">
-    <span><i style = "color:${element.color}" class="fa-solid ${element.prefix}${element.name}"></i></span><br>
-    <span>${element.name}</span><br>
-  </div>  
-`
-
-});
+const options = document.querySelector("select");
 
 
-// Milestone 2: Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
+// Array tipologia animali
+// const animals = icons.filter((element) => {
+//   if(element.type === 'animal'){
+//     return true;
+//   }
+//   return false;
+// });
+// console.log(animals);
+
+
+// // Array tipologia verdure
+// const vegetables = icons.filter((element) =>{
+//   if(element.type === 'vegetable'){
+//     return true;
+//   }
+//   return false;
+// })
+// console.log(vegetables);
+
+
+// // Array tipologia utenti
+// const users = icons.filter((element) =>{
+//   if(element.type === 'user'){
+//     return true;
+//   }
+//   return false;
+// })
+// console.log(vegetables);
+
+
+
+options.addEventListener("change", changeSelect);
+
+function changeSelect() {
+
+	console.log(options.value);
+
+	let iconsFiltered = icons.filter(icon =>{
+		return options.value === icon.type || options.value === "all";
+	})
+
+	printCards(iconsFiltered);
+
+
+	// let iconsFiltered = icons.filter (icons =>{
+	// 	if ("animals" === options.value){
+	// 		console.log(animals);
+	// 	} else if (vegetables === options.value){
+	// 		console.log(vegetables);
+	// 	} else if (users === options.value){
+	// 		console.log(users);
+	// 	} else{
+	// 		console.log(icons);
+	// 	}
+	// })
+
+
+}
+
+function printCards(iconsToPrints) {
+
+	contenitore.innerHTML = "";
+	
+	iconsToPrints.forEach(element => {
+
+		cardDinamica = 
+		`
+		<div class="card">
+			<span><i style = "color:${element.color}" class="fa-solid ${element.prefix}${element.name}"></i></span><br>
+			<span style = "text-transform: uppercase" >${element.name}</span><br>
+		</div>  
+		`
+	
+		contenitore.innerHTML += cardDinamica;
+	
+	});
+
+
+
+}
+
+printCards(icons);
+
+
+// Stampiamo le card
+
+
+
+
+
+
+// Milestone 3: Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone *(animal, vegetable, user)*. Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+
+
+
+
+
+
+
+
+
+
+
 
